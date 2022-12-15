@@ -1,7 +1,8 @@
 version: '3'
 
 services:
-  web: 
+  web:
+    container_name: app
     build:
       context: .
       target: builder
