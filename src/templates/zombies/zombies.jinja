@@ -5,13 +5,9 @@
 {% block content %}
 
     <div class="flex">
-        {% if zombie is not undefined %}
+        {% for zombie in zombies %}
             {{ oo.printZombie(zombie) }}
-        {% else %}
-            {% for zombie in zombies %}
-                {{ oo.printZombie(zombie) }}
-            {% endfor %}
-        {% endif %}
+        {% endfor %}
     </div>
 
 {% endblock content %}

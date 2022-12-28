@@ -1,29 +1,25 @@
+{% macro printPart(part) %}
+
+    {% if part.has %}
+        <img src="{{ part.path }}">
+    {% endif %}
+
+{% endmacro %}
+
 {% macro printZombie(zombie) %}
 
     <div class="zombie flex-col p-4">
         <div class="head">
-            {% if zombie.head.has %}
-                <img src="{{ zombie.head.path }}">
-            {% endif %}
+            {{ printPart(zombie.head) }}
         </div>
         <div class="body">
-            {% if zombie.leftArm.has %}
-                <img src="{{ zombie.leftArm.path }}">
-            {% endif %}
-            {% if zombie.body.has %}
-                <img src="{{ zombie.body.path }}">
-            {% endif %}
-            {% if zombie.rightArm.has %}
-                <img src="{{ zombie.rightArm.path }}">
-            {% endif %}
+            {{ printPart(zombie.leftArm) }}
+            {{ printPart(zombie.body) }}
+            {{ printPart(zombie.rightArm) }}
         </div>
         <div class="lower">
-            {% if zombie.leftLeg.has %}
-                <img src="{{ zombie.leftLeg.path }}">
-            {% endif %}
-            {% if zombie.rightLeg.has %}
-                <img src="{{ zombie.rightLeg.path }}">
-            {% endif %}
+            {{ printPart(zombie.leftLeg) }}
+            {{ printPart(zombie.rightLeg) }}
         </div>
     </div>
 

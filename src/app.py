@@ -11,7 +11,7 @@ def zombie():
 
 	fullBody: bool = request.args.get('fullBody')
 
-	return render_template('zombies/zombies.jinja', zombie=Zombie(fullBody))
+	return render_template('zombies/zombies.jinja', zombies=[Zombie(fullBody)])
 
 @app.route('/zombies/<n>')
 def zombies(n):
