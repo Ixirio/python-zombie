@@ -1,3 +1,42 @@
 * {
     background-color: black;
+    color: white;
+    width: auto;
+    height: auto;
+}
+
+.zombie {
+    width: fit-content;
+}
+
+.head {
+    display: flex;
+    margin: auto;
+}
+
+.body {
+    display: flex;
+}
+
+.lower {
+    display: flex;
+    margin: auto;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.p-4 {
+    padding: 2px 4px 2px 4px;
+}
+
+img {
+    width: fit-content;
+    height: fit-content;
 }

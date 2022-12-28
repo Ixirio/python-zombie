@@ -1,7 +1,17 @@
+{% import 'macro.jinja' as oo %}
+
 {% extends "socle/base.jinja" %}
 
 {% block content %}
 
-    {{ zombie }}
+    <div class="flex">
+        {% if zombie is not undefined %}
+            {{ oo.printZombie(zombie) }}
+        {% else %}
+            {% for zombie in zombies %}
+                {{ oo.printZombie(zombie) }}
+            {% endfor %}
+        {% endif %}
+    </div>
 
 {% endblock content %}
