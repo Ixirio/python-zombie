@@ -6,21 +6,24 @@ app = Flask(__name__)
 def hello():
 	return render_template('zombies/zombies.jinja', zombie=Zombie(True))
 
+def getFullBody(requestArgs) -> bool:
+	return True if requestArgs.get('full') == '1' else False
+
 @app.route('/zombie')
 def zombie():
 
-	fullBody: bool = request.args.get('fullBody')
-
-	return render_template('zombies/zombies.jinja', zombies=[Zombie(fullBody)])
+	return render_template(
+		'zombies/zombies.jinja',
+		zombies=[ Zombie(getFullBody(request.args)) ]
+	)
 
 @app.route('/zombies/<n>')
 def zombies(n):
 
-	fullBody: bool = request.args.get('fullBody')
-
-	zombies: list[Zombie] = [ Zombie(fullBody) for _ in range(int(n)) ]
-
-	return render_template('zombies/zombies.jinja', zombies=zombies)
+	return render_template(
+		'zombies/zombies.jinja',
+		zombies=[ Zombie(getFullBody(request.args)) for _ in range(int(n)) ]
+	)
 
 @app.errorhandler(404)
 def page_not_found(e):
