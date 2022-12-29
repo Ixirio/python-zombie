@@ -5,21 +5,7 @@
     height: auto;
 }
 
-.zombie {
-    width: fit-content;
-}
-
-.head {
-    display: flex;
-    margin: auto;
-}
-
-.body {
-    display: flex;
-}
-
-.lower {
-    display: flex;
+.m-auto {
     margin: auto;
 }
 
@@ -32,8 +18,26 @@
     flex-direction: column;
 }
 
-.p-4 {
-    padding: 2px 4px 2px 4px;
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.px-4 {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.py-2 {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.opacity-0 {
+    opacity: 0;
 }
 
 img {

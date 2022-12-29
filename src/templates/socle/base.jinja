@@ -5,17 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
     <title>Zombie</title>
 </head>
 <body>
-
-    {% set random = range(1, 100) | random %}
-
     <div class="flex">
         <a class="p-4" href="/zombie">zombie</a>
-        <a class="p-4" href="/zombies/{{ random }}"> {{ random }} random zombies</a>
+        <a class="p-4" href="/zombies/{{ range(1, 100)|random }}"> random zombies</a>
+    
+        <input onclick="manageFullBody()" type="checkbox" id="fullBody" name="fullBody">
+        <label for="fullBody">full body</label>
     </div>
-
     {% block content %} {% endblock %}
 </body>
 </html>

@@ -9,14 +9,6 @@ class Zombie:
     leftLeg : dict
     rightLeg : dict
 
-    def __init__(self) -> None:
-        self.body = self.getZombiePart('body', True)
-        self.head = self.getZombiePart('head')
-        self.leftArm = self.getZombiePart('left_arm')
-        self.rightArm = self.getZombiePart('right_arm')
-        self.leftLeg = self.getZombiePart('left_leg')
-        self.rightLeg = self.getZombiePart('right_leg')
-
     def __init__(self, fullBody: bool) -> None:
         self.body = self.getZombiePart('body', True)
         self.head = self.getZombiePart('head', fullBody)

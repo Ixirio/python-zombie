@@ -3,11 +3,9 @@
 {% extends "socle/base.jinja" %}
 
 {% block content %}
-
-    <div class="flex">
+    <div class="flex flex-wrap">
         {% for zombie in zombies %}
             {{ oo.printZombie(zombie) }}
         {% endfor %}
     </div>
-
 {% endblock content %}
