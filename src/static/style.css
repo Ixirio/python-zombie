@@ -1,6 +1,5 @@
 * {
-    background-color: black;
-    color: white;
+    color: black;
     width: auto;
     height: auto;
 }
@@ -43,4 +42,12 @@
 img {
     width: fit-content;
     height: fit-content;
+}
+
+.rotate {
+    transition: 3s;
+}
+
+.rotate:hover {
+    transform: rotate(360deg);
 }

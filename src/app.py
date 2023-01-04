@@ -9,18 +9,23 @@ def hello():
 def getFullBody(requestArgs) -> bool:
 	return True if requestArgs.get('full') == '1' else False
 
+def getRotate(requestArgs) -> bool:
+	return True if requestArgs.get('rotate') == '1' else False
+
 @app.route('/zombie')
 def zombie():
 	return render_template(
 		'zombies/zombies.jinja',
-		zombies=[ Zombie(getFullBody(request.args)) ]
+		zombies=[ Zombie(getFullBody(request.args)) ],
+		rotate=getRotate(request.args)
 	)
 
 @app.route('/zombies/<n>')
 def zombies(n):
 	return render_template(
 		'zombies/zombies.jinja',
-		zombies=[ Zombie(getFullBody(request.args)) for _ in range(int(n)) ]
+		zombies=[ Zombie(getFullBody(request.args)) for _ in range(int(n)) ],
+		rotate=getRotate(request.args)
 	)
 
 @app.errorhandler(404)

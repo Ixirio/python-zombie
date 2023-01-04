@@ -20,8 +20,11 @@ class Zombie:
     def getRandomBool(self) -> bool:
         return bool(random.getrandbits(1))
 
+    def getRandomRange(self, start: int, stop: int) -> int:
+        return random.randint(start, stop)
+
     def getZombiePart(self, element: str, required: bool = False) -> dict:
         return {
             'has' : True if required else self.getRandomBool(),
-            'path': f'/static/zombie/{element}.png'
+            'path': f'/static/zombie/{self.getRandomRange(1, 3)}/{element}.png'
         }
